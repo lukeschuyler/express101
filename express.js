@@ -10,4 +10,6 @@ exp.get('/time', (req, res) => {
     res.send(date.toISOString())
 })
 
-exp.listen(8080)
+const { PORT } = process.env
+
+PORT ? exp.listen(PORT) : exp.listen(8080)
